@@ -17,9 +17,6 @@ lor.set("Ent", "Treebeard")
 // console.log(lor.get("Maiar"))
 
 function palindrome(string) {
-    //add => dad ~ dda => dad
-    //even number except one will result in a palindrome
-    //ANY permutation of string is palindrome?
 
     let stringHash = new HashMap();
     
@@ -37,17 +34,16 @@ function palindrome(string) {
             result = false;
         }
     }
-    console.log(stringHash)
     console.log(result)
     return result
 }
 
-// palindrome("racecar")
-// palindrome("nope")
-// palindrome("reallyy")
-// palindrome("eeee")
-// palindrome("abcdab")
-// palindrome("abcdbca")
+palindrome("racecar")
+palindrome("nope")
+palindrome("reallyy")
+palindrome("eeee")
+palindrome("abcdab")
+palindrome("abcdbca")
 
 function anagramGrouping (arr, result = [], index = 0) {
     
@@ -58,14 +54,13 @@ function anagramGrouping (arr, result = [], index = 0) {
     } else if (arr.length > index) {
         let hash = new HashMap();
         hash.splitString(arr[index])
-        let append = false;
+        let append = true;
         for (i=0; i<result.length; i++) {
             if (hash.compare(result[i][0]) === true) {
                 result[i].push(arr[index])
                 append = false;
                 break
             } 
-                append = true;
         }
         if (append === true) {
             result.push([arr[index]])
